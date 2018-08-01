@@ -1,0 +1,36 @@
+$roboto-font-path: $font-path !default;
+@font-face {
+  font-family: "qs-Thin";
+  font-style: normal;
+  font-weight: 300;
+  src: local("Quicksand Light"),
+  local("Quicksand-Light"),
+  url("#{$roboto-font-path}/quick-sand/Quicksand-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "qs-Regular";
+  font-style: normal;
+  font-weight: 300;
+  src: local("Quicksand Regular"),
+  local("Quicksand-Regular"),
+  url("#{$roboto-font-path}/quick-sand/Quicksand-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "qs-Medium";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Quicksand Medium"),
+  local("Quicksand-Medium"),
+  url("#{$roboto-font-path}/quick-sand/Quicksand-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "qs-Bold";
+  font-style: normal;
+  font-weight: 700;
+  src: local("Quicksand Bold"),
+  local("Quicksand-Bold"),
+  url("#{$roboto-font-path}/quick-sand/Quicksand-Bold.ttf") format("truetype");
+}

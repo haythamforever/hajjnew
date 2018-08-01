@@ -1,30 +1,27 @@
 // Ionic Variables and Theming. For more info, please see:
 // http://ionicframework.com/docs/theming/
-
 // Font path is used to include ionicons,
 // roboto, and noto sans fonts
 $font-path: "../assets/fonts";
-
-
+// layout - breakpoints
+$S: 320px;
+$M: 768px;
+$L: 1170px;
+//$font-path: "../assets/fonts/poppins";
 // The app direction is used to include
 // rtl styles in your app. For more info, please see:
 // http://ionicframework.com/docs/theming/rtl-support/
 $app-direction: ltr;
-
-
 @import "ionic.globals";
-
-
-// Shared Variables
+@import './gradient-mixins';
+@import './data-curser.scss';
+@import './dig-animations-mixins';
+// Shared Variables 
 // --------------------------------------------------
 // To customize the look and feel of this app, you can override
 // the Sass variables found in Ionic's source scss files.
 // To view all the possible Ionic variables, see:
 // http://ionicframework.com/docs/theming/overriding-ionic-variables/
-
-
-
-
 // Named Color Variables
 // --------------------------------------------------
 // Named colors makes it easy to reuse colors on various components.
@@ -32,57 +29,94 @@ $app-direction: ltr;
 // to match your app's branding. Ionic uses a Sass map of
 // colors so you can add, rename and remove colors as needed.
 // The "primary" color is the only required color in the map.
+$colors: ( // primary:    #488aff, Default Value 10998e
+main-green:#286d40, primary: rgba(16, 153, 142, 1), secondary: rgba(128, 207, 66, 1), danger: #d82020, warning:#f7941f, light: #f4f4f4, light2: #b5b5b5, dark: #222, subtitle: #042833, blue1:#46a4da, blue2 :#3594cb, pastel: ( base: #55acee, contrast: #ffffff, pink: #f891a0, softteal:#c1dee7, yellow:#f9e8a3));
+[color='primary'] {
+  color: color($colors, primary);
+}
 
-$colors: (
-  primary:    #488aff,
-  secondary:  #32db64,
-  danger:     #f53d3d,
-  light:      #f4f4f4,
-  dark:       #222
-);
+[color='secondary'] {
+  color: color($colors, secondary);
+}
 
+[color='danger'] {
+  color: color($colors, danger);
+}
 
+[color='warning'] {
+  color: color($colors, warning);
+}
+
+$small-screen: 320px;
+$large-screen: 1200px;
+$medium-screen: 1024px;
+//override ionoc sass
+//$text-input-md-highlight-color: color($colors, light) !default;
+$toolbar-background:color($colors, main-green) !default;
+$toolbar-background:color($colors, main-green) !default;
+$toolbar-border-color:color($colors, secondary) !default;
+$alert-md-button-text-transform:none !default;
+$button-md-text-transform:none !default;
+$segment-button-ios-border-radius: 0 !default;
+$segment-button-md-border-radius: 0 !default;
+$text-input-highlight-color-invalid:color($colors, danger);
+$text-input-highlight-color-valid:color($colors, secondary);
+$text-input-ios-highlight-color: color($colors, primary) !default;
+$text-input-ios-highlight-color-valid: color($colors, secondary) !default;
+$text-input-ios-highlight-color-invalid: color($colors, danger) !default;
+$text-input-md-show-focus-highlight: true !default;
+$text-input-md-show-valid-highlight: $text-input-md-show-focus-highlight !default;
+$text-input-md-show-invalid-highlight: $text-input-md-show-focus-highlight !default;
+$text-input-ios-show-focus-highlight: true !important;
+$text-input-ios-show-valid-highlight:$text-input-ios-show-focus-highlight !default;
+$text-input-ios-show-invalid-highlight:$text-input-ios-show-focus-highlight !default;
+// $item-ios-avatar-size: 65px !important; 
+// $tabs-background:transparent !default;
+// $input-wp-border-color:red !default;
+// $text-color:white !default;
+// $link-color:color($colors, light) !default;
 // App iOS Variables
 // --------------------------------------------------
 // iOS only Sass variables can go here
-
-
-
+.ios {
+  // *{
+  // letter-spacing: 0 ;    
+  // }
+  ion-item {
+    background-color: transparent;
+  }
+}
 
 // App Material Design Variables
 // --------------------------------------------------
 // Material Design only Sass variables can go here
-
-
-
+.md {
+  ion-item {
+    background-color: transparent;
+  }
+}
 
 // App Windows Variables
 // --------------------------------------------------
 // Windows only Sass variables can go here
-
-
-
-
 // App Theme
 // --------------------------------------------------
 // Ionic apps can have different themes applied, which can
 // then be future customized. This import comes last
 // so that the above variables are used and Ionic's
 // default are overridden.
-
 @import "ionic.theme.default";
-
-
 // Ionicons
 // --------------------------------------------------
 // The premium icon font for Ionic. For more info, please see:
 // http://ionicframework.com/docs/ionicons/
-
 @import "ionic.ionicons";
-
-
 // Fonts
 // --------------------------------------------------
-
-@import "roboto";
+//@import "roboto";defalt ionic font
+@import "./quick-sand";
 @import "noto-sans";
+@import "./_hexagon-mask";
+@import './my-mixins';
+//material design icons
+@import"./mdi-icon/materialdesignicons";

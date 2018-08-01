@@ -1,0 +1,169 @@
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+//dialpad dig animation
+@include keyframes(pulse-gray) {
+  0% {
+    box-shadow: inset 0 0 0px 30px #2D2D2D, inset 0 0 0px 30px white;
+    -ms-transform: scale(1, 1);
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+  }
+  10% {
+    -ms-transform: scale(0.8, 0.8);
+    -webkit-transform: scale(0.8, 0.8);
+    transform: scale(0.8, 0.8);
+  }
+  30% {
+    box-shadow: inset 0 0 0px 10px #2D2D2D, inset 0 0 0px 30px white;
+  }
+  60% {
+    box-shadow: inset 0 0 0px 0px #2D2D2D, inset 0 0 0px 0px white;
+    -ms-transform: scale(0.8, 0.8);
+    -webkit-transform: scale(0.8, 0.8);
+    transform: scale(0.8, 0.8);
+  }
+  100% {
+    -ms-transform: scale(1, 1);
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+  }
+}
+
+//trentren animation
+@include keyframes(trentren) {
+  0% {
+    -webkit-transform: rotateZ(0);
+  }
+  1% {
+    -webkit-transform: rotateZ(30deg);
+  }
+  3% {
+    -webkit-transform: rotateZ(-28deg);
+  }
+  5% {
+    -webkit-transform: rotateZ(34deg);
+  }
+  7% {
+    -webkit-transform: rotateZ(-32deg);
+  }
+  9% {
+    -webkit-transform: rotateZ(30deg);
+  }
+  11% {
+    -webkit-transform: rotateZ(-28deg);
+  }
+  13% {
+    -webkit-transform: rotateZ(26deg);
+  }
+  15% {
+    -webkit-transform: rotateZ(-24deg);
+  }
+  17% {
+    -webkit-transform: rotateZ(22deg);
+  }
+  19% {
+    -webkit-transform: rotateZ(-20deg);
+  }
+  21% {
+    -webkit-transform: rotateZ(18deg);
+  }
+  23% {
+    -webkit-transform: rotateZ(-16deg);
+  }
+  25% {
+    -webkit-transform: rotateZ(14deg);
+  }
+  27% {
+    -webkit-transform: rotateZ(-12deg);
+  }
+  29% {
+    -webkit-transform: rotateZ(10deg);
+  }
+  31% {
+    -webkit-transform: rotateZ(-8deg);
+  }
+  33% {
+    -webkit-transform: rotateZ(6deg);
+  }
+  35% {
+    -webkit-transform: rotateZ(-4deg);
+  }
+  37% {
+    -webkit-transform: rotateZ(2deg);
+  }
+  39% {
+    -webkit-transform: rotateZ(-1deg);
+  }
+  41% {
+    -webkit-transform: rotateZ(1deg);
+  }
+  43% {
+    -webkit-transform: rotateZ(0);
+  }
+  100% {
+    -webkit-transform: rotateZ(0);
+  }
+}
+
+//fading animation
+@include keyframes(faded) {
+  from,
+  50%,
+  to {
+    opacity: 1;
+  }
+  25%,
+  75% {
+    opacity: 0.3;
+  }
+}
+
+//call any animation
+@mixin anyCustomAnimation($animation-name, $animation-duration, $animation-timing, $animation-iteration-count, $animation-direction) {
+  -webkit-animation-name: $animation-name; //keyframe name
+  -moz-animation-name: $animation-name;
+  -o-animation-name: $animation-name;
+  animation-name: $animation-name;
+  -webkit-animation-duration: $animation-duration; //duration =Specify that the animation should complete one cycle in 3 seconds
+  -moz-animation-duration: $animation-duration;
+  -o-animation-duration: $animation-duration;
+  animation-duration: $animation-duration;
+  -webkit-animation-timing-function: $animation-timing; //The animation-timing-function specifies the speed curve of an animation. exp=Linear
+  -moz-animation-timing-function: $animation-timing;
+  -o-animation-timing-function: $animation-timing;
+  animation-timing-function: $animation-timing;
+  -webkit-animation-iteration-count: $animation-iteration-count; //Play the animation two times. number of repeate time
+  -moz-animation-iteration-count: $animation-iteration-count;
+  -o-animation-iteration-count: $animation-iteration-count;
+  animation-iteration-count: $animation-iteration-count;
+  -webkit-animation-direction: $animation-direction; //Play the animation forwards first, then backwards: values are normal  reverse	  alternate	  alternate-reverse	  initial  inherit
+  -moz-animation-direction: $animation-direction;
+  -o-animation-direction: $animation-direction;
+  animation-direction: $animation-direction;
+}
+
+// .trentren {
+//   -moz-animation: ringing 2s 5 ease 1s;
+//   -webkit-animation: ringing 2s 5 ease 1s;
+//   -o-animation: ringing 2s 5 ease 1s;
+//   -ms-animation: ringing 2s 5 ease 1s;
+//   animation: ringing 2s 5 ease 1s;
+//   -moz-transform-origin: 50% 0;
+//   -webkit-transform-origin: 50% 0;
+//   -o-transform-origin: 50% 0;
+//   -ms-transform-origin: 50% 0;
+//   transform-origin: 50% 0;
+// }

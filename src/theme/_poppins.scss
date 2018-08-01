@@ -1,0 +1,37 @@
+
+
+$roboto-font-path: $font-path !default;
+
+@font-face {
+  font-family: "Poppins-Thin";
+  font-style: normal;
+  font-weight: 300;
+  src: local("Poppins-Thin"), local("Poppins-Thin"), url("#{$roboto-font-path}/popins/Poppins-Thin.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Poppins-Regular";
+  font-style: normal;
+  font-weight: 300;
+  src: local("Poppins"), local("Poppins-Regular") ,url("#{$roboto-font-path}/popins/Poppins-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Poppins-Medium";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Roboto Medium"), local("Roboto-Medium"), url("#{$roboto-font-path}/popins/Poppins-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Poppins-Bold";
+  font-style: normal;
+  font-weight: 700;
+  src: local("Poppins Bold"), local("Poppins-Bold"), 
+   url("#{$roboto-font-path}/popins/Poppins-Bold.ttf") format("truetype");
+}
+
+
+
+  
+ 

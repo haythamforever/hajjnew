@@ -1,14 +1,55 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
-</ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content no-bounce>
+
+  <form #loginForm="ngForm" (ngSubmit)="loginIn()">
+    <ion-list padding class="wholepage">
+      <ion-item no-lines></ion-item>
+      <div text-center class="logo">
+        <img src="../../assets/imgs/logo.png" />
+      </div>
+
+      <div *ngIf="isLoginError" class="alert alert-danger fade in">
+        <strong>Sorry !</strong> Incorrect UserName or Password
+      </div>
+
+      <ion-item class="login-item">
+
+        <ion-icon item-left color="secondary" class="login-icon mdi mdi-account-outline"></ion-icon>
+        <ion-label floating class="login-lable">Username</ion-label>
+        <ion-input  type="text" name="username" required class="login-input"></ion-input>
+
+      </ion-item>
+
+      <ion-item class="login-item">
+        <!-- placeholder="password"  type="{{type}}-->
+        <ion-label floating class="login-lable">Password</ion-label>
+        <ion-icon item-left color="secondary" class="login-icon mdi mdi-lock-outline"></ion-icon>
+        <ion-input type="password"  name="password" required class="login-input"></ion-input>
+        <ion-icon name="ios-eye" item-right color="secondary" class="login-icon" hidden (click)="showHide()"></ion-icon>
+      </ion-item>
+
+      <div text-right>
+        <a ion-button clear class="forget" (click)="forgetpassword()">
+          Forgot password?
+        </a>
+      </div>
+
+      <ion-item class="sign-in-button-container">
+        <ion-col text-center>
+          <!-- showWhen="android" -->
+          <div padding class="signin">
+            <button [disabled]="!loginForm.valid" ion-button type="submit" block>Sign In</button>
+          </div>
+        </ion-col>
+      </ion-item>
+    </ion-list>
+  </form>
+
+  <!-- <button ion-button type="submit" (click)="forgetpassword()" block> forget your pass</button> -->
+
+  <!-- <button ion-button  block (click)="LoginDriver()">Login as Driver</button>
+  <button ion-button  block (click)="LoginRider()">Login as Rider</button> -->
 </ion-content>
+
+
+

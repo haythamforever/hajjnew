@@ -1,0 +1,29 @@
+@mixin avatar-flat-border($dim, $shadowSpreed1px, $shadowSpreed2px, $shadowSpreed1Color, $shadowSpreed2Color, $border-color) {
+  border-radius: 50%;
+  width: $dim;
+  height: $dim;
+  border: 2px solid $border-color;
+  box-shadow: 0 0 0 $shadowSpreed1px $shadowSpreed1Color, 0 0 0 $shadowSpreed2px $shadowSpreed2Color;
+}
+/*****Generate Random colors********/
+
+/*****Generate gradiant colors********/
+/***https://codepen.io/charlespeters/post/random-background-color-sass***/
+$key: random( length($colors) );
+$nth: nth( $colors, $key );
+$main-color: $nth !default;
+
+@mixin drowGrediantDgree($c, $y) {
+  background: $c;
+  @for $i from 1 through $y {
+    $k: 3%;
+    $j: $i - 1;
+
+    @if $i == 1 {
+      &:nth-child(#{$i}) { background: $c; }
+    }
+    @else {
+      &:nth-child(#{$i}) { background: darken($c, ($k * $j)); }
+    }
+  }
+}

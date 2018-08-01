@@ -1,0 +1,15 @@
+//intize varibles
+$cursor: (
+  hand: pointer,
+  alias:alias,	//The cursor indicates an alias of something is to be created	
+  all-scroll:all-scroll	,//The cursor indicates that something can be scrolled in any direction	
+  cell:cell,	//The cursor indicates that a cell (or set of cells) may be selected	
+  context-menu:context-menu,	//The cursor indicates that a context-menu is available	
+  col-resize:col-resize,	//The cursor indicates that the column can be resized horizontally	
+  default: default
+  );
+//set values
+[data-cursor^="hand"] {
+    cursor :  map-get($cursor,hand);
+}
+  

@@ -1,6 +1,4 @@
 // http://ionicframework.com/docs/theming/
-
-
 // App Global Sass
 // --------------------------------------------------
 // Put style rules here that you want to apply globally. These
@@ -10,7 +8,388 @@
 //
 // Shared Sass variables, which can be used to adjust Ionic's
 // default Sass variables, belong in "theme/variables.scss".
-//
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+//If we had any style rules that we wanted to apply the entire App we would put them in app.scss:
+* {
+  font-family: 'qs-Regular';
+  font-weight: 600;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+ion-text,
+ion-lable {
+  font-family: 'qs-Regular' !important;
+  font-weight: 400 !important; // letter-spacing: 1px;
+  small {
+    font-weight: 300 !important;
+    font-family: 'qs-Thin' !important;
+  }
+}
+
+[no-border] {
+  border: 0 !important;
+}
+
+[noscroll] {
+  overflow-y: hidden;
+  .scroll-content {
+    overflow-y: hidden;
+  }
+}
+
+body {
+  font-family: 'Poppins-Regular' !important;
+  color: rgb(92, 92, 92);
+}
+
+[text-center] {
+  text-align: center !important;
+}
+
+.list-ios>.item-block:last-child,
+.list-ios>.item-wrapper:last-child .item-block {
+  border-bottom: none;
+}
+
+.logo {
+  img {
+    width: 10em;
+  }
+}
+
+.login-item {
+  .item-inner {
+    margin-left: 0 !important;
+  }
+  .login-lable,
+  .login-input {
+    color: rgb(233, 233, 233) !important;
+  }
+  .forget {
+    border-bottom: none !important;
+  }
+  .login-icon {
+    margin: 35px 11px 8px 0 !important;
+  }
+}
+
+ion-menu {
+  .menu-inner {
+    transition: transform 300ms cubic-bezier(0.42, 2.12, 0.35, 0.55) !important;
+  }
+}
+
+.sidemenuLink {
+  background-color: transparent !important;
+}
+
+.alertCustomCss,
+ion-alert {
+  .alert-wrapper {
+    /* background-color: rebeccapurple; */
+    .alert-message {
+      overflow: auto !important;
+    }
+    .alert-radio-group {
+      overflow: auto !important;
+      .alert-tappable {
+        .button-inner {
+          margin: 5px auto;
+          background-color: color($colors, secondary);
+          width: 80%;
+          border: 4px solid #fff;
+          width: 80%;
+          height: 100%;
+          margin-bottom: 6px;
+          padding: -2px;
+          border-radius: 7px;
+          .alert-radio-icon,
+          .alert-radio-label {
+            color: white;
+          }
+        }
+      }
+    }
+    [aria-checked=true] {
+      .button-inner {
+        .alert-radio-icon {
+          .alert-radio-inner {
+            border-color: white !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+div#toast-container {
+  display: block;
+}
+
+.toast-container.toast-top-full-width .toast,
+.toast-container.toast-bottom-full-width .toast {
+  width: 100% !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
+
+.toast-container {
+  contain: none !important;
+  .toast {
+    margin: 25px 4em;
+  }
+}
+
+.toast-success {
+  background-image: none !important;
+  background-color: #313131 !important;
+  padding: 0 !important;
+  top: 32px !important;
+  position: relative;
+}
+
+.toast-container .toast-close-button {
+  right: 0.8em !important;
+  top: 0.8em !important;
+  &:hover,
+  &:focus {
+    color: #b6b6b6 !important;
+    opacity: 0.8 !important;
+  }
+}
+
+.toast-message {
+  font-size: 1.5em;
+  &:before {
+    color: color($colors, secondary);
+    font-family: "Ionicons";
+    content: "\f13e";
+    float: left;
+    margin-right: 10px;
+    @include anyCustomAnimation(trentren, 5s, ease, infinite, normal);
+  }
+  .incoming {
+    @include anyCustomAnimation(faded, 5s, ease, infinite, normal);
+    color: color($colors, secondary);
+    display: block;
+    font-weight: bold;
+    font-size: 12px;
+  }
+}
+
+.toast-answered.ng-trigger.ng-trigger-flyInOut {
+  top: 0 !important;
+  position: fixed;
+  text-align: center;
+  width: 100%;
+  font-size: 8px;
+  background-color: #1eba2b !important;
+  .toast-message {
+    padding: 16px 0 5px 0 !important;
+  }
+}
+
+.toast-progress {
+  background-color: #f3f3f3 !important;
+}
+
+//------------------timeline-----------------------------------------------
+$dark-grey: #808080;
+$light-grey: #d9d9d9;
+.color-overlay {
+  padding: 3em 2em;
+  box-sizing: border-box;
+  color: white;
+  background: color($colors, primary);
+  &:after {
+    content: "\F0F5";
+    font: normal normal normal 24px/1 "Material Design Icons";
+    position: absolute;
+    font-size: 12rem;
+    right: 0;
+    color: #a6deff;
+  }
+}
+
+.day-number {
+  font-size: 4em;
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.date-right {
+  display: inline-block;
+}
+
+.day-name {
+  font-size: 1.6em;
+}
+
+.month {
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 0.6em;
+  letter-spacing: 2px;
+  margin-top: 2px;
+}
+
+.timeline {
+  ul,
+  ion-list {
+    padding: 1em 0 0 2em;
+    margin: 0;
+    list-style: none;
+    position: relative;
+    &::before {
+      content: ' ';
+      height: 100%;
+      width: 1px;
+      background-color: $light-grey;
+      position: absolute;
+      top: 0;
+      left: 2.5em;
+      z-index: -1;
+    }
+    ion-item,
+    .item-block {
+      padding-left: 0;
+      margin: 0;
+      border: 0 !important;
+      .item-inner {
+        border-bottom: 0 !important;
+      }
+      /*  background-color: #B0E8E2; */
+      div {
+        display: inline-block;
+        margin: 0;
+        vertical-align: top;
+      }
+      .bullet {
+        width: 1em;
+        height: 1em;
+        box-sizing: border-box;
+        border-radius: 50%;
+        z-index: 1;
+        margin-right: 1em;
+        &.green {
+          border: 2px solid color($colors, secondary);
+          background: color($colors, secondary);
+        }
+        &.orange {
+          border: 2px solid color($colors, warning);
+          background: color($colors, warning);
+        }
+        &.red {
+          border: 2px solid color($colors, danger);
+          background: color($colors, danger);
+        }
+      }
+      .time {
+        font-size: 0.75em;
+        padding-top: 0.25em;
+      }
+      .desc {
+        /*  width: 50%; */
+      }
+      h3 {
+        font-size: 1em;
+        font-weight: 400;
+        margin: 0;
+      }
+      h4 {
+        margin: 0;
+        font-size: 0.8em;
+        font-weight: 400;
+        color: $dark-grey;
+      }
+      ion-item {
+        .people {
+          ion-avatar {
+            width: auto;
+            height: auto;
+            img {
+              width: 70px;
+              height: auto;
+              border-radius: 50%;
+              border: 1px solid #eee;
+              &:before {
+                content: " ";
+                border: 1px solid green;
+                width: 60px;
+                height: auto;
+                border-radius: 50%; // box-shadow: 50px 50px 0 50px #bcd3fe;
+              }
+            }
+          }
+        }
+      }
+      .people {
+        ion-avatar {
+          width: auto;
+          height: auto;
+          img {
+            width: 170px;
+            height: auto;
+            border-radius: 50%;
+            border: 1px solid #eee;
+            &:before {
+              content: " ";
+              border: 1px solid green;
+              width: 60px;
+              height: auto;
+              border-radius: 50%; // box-shadow: 50px 50px 0 50px #bcd3fe;
+            }
+          }
+        }
+      }
+    }
+  }
+} //timline
+//-----------------End-timeline-----------------------------------------------
+//slimscroll
+.slimScrollBar {
+  z-index: 888 !important;
+}
+
+//-----------------Boxes----------------------------------
+.box-left {
+  display: flex;
+  flex-direction: row;
+  width: 30vw;
+  max-width: 100px;
+  float: left;
+}
+
+.box-right {
+  display: table-cell;
+  flex-direction: row;
+  width: 80vw;
+}
+
+//----------------End Boxes--------------------------------
+////
+.clearfix {
+  content: " ";
+  width: 100%;
+  clear: both;
+  float: none;
+  height: 1px;
+}
+
+//----------------------------
+.custom-bdg {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  padding: 4px 5px;
+  width: 21px;
+  height: 21px;
+  border-radius: 50%;
+  text-align: center;
+}
